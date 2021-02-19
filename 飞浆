@@ -1,0 +1,379 @@
+【飞浆百度领航团Python速成营】学习笔记
+Python的学习心得
+作为一名软件工程专业的大一新生，首先很庆幸自己有机会跟着飞浆领航团学习python，可能是我个人比较认为这门课程所用的语言很特别很奇妙，老师也很有趣，能让我们更好的了解Python这门课程真正的用途。在学习Python这门课程的这段时间以来，并且自己也能认识并且学习到很多知识，以下就是对这门课程所做的总结：
+
+Python是一种高级动态，完全面向对象的语言，方便快捷。相较于已学的C语言以及将要学习的Java都要更加简洁高效，抽象性更强，更加便于理解。Python就类似于一个超级计算机，相信在之后的学习中对这门语言还会有更深刻的理解。
+
+六天以来学习的知识点如下：
+
+1、 整型int与浮点型float：可以进行基本的运算 如5*7=35 、7/2=3.5、7%3=1等 一些相关的数学函数类似于sin之类都在math模块中
+
+a = [1,True,'ab']
+a + ["Hello"]
+a + [False]
+a + [False]
+print(len(a))
+print(a[1:3])
+print(a[0:3:2])
+print(a[::-1])
+a+a
+1
+2
+3
+4
+5
+6
+7
+8
+9
+2、复数计算与逻辑值：复数的与或非（）相关的都可以很快捷的运算出结果
+逻辑值如
+1>2为false 、bool(999)为true
+3、 字符串的相关操作：+拼接、 *复制、len长度、[start：end：step]用来提取一部分和以及一些相关高级操作 如下图(含例):
+
+#字符串操作
+
+a,b = 'abc','xyz'
+print('a' in a)
+print(ord(a[0]))
+print(chr(65))
+print('\u4e2d\u6587')
+1
+2
+3
+4
+5
+4、.列表与元组：列表可以增加、删除、替换和重排的作用和一些切片拆分的操作 如下图:
+
+#List列表
+
+a=[1,2,3,4]
+b = a
+b[1] = True
+print(a)
+1
+2
+3
+4
+#列表元组的基本操作
+
+a=[1,2,3]
+a+[4]
+a*2
+len(a)
+2 in a
+1
+2
+3
+4
+5
+#列表元素的高级操作
+
+mylist=[1,2,3,4,5]
+mylist[1:4]
+mylist[2:5]
+mylist[-3::-1]
+mylist[::2]
+1
+2
+3
+4
+5
+#切片
+
+s='abcdefg12345'
+print(s[3:9])
+print(s[:10:2])
+1
+2
+3
+#拆分
+
+t='Mike and Tom'
+print(t.split(' '))
+1
+2
+5、range函数：是连续序列生成器
+
+list(range(10))
+list(range(5,10))
+range(0,10)
+tuple(range(10))
+1
+2
+3
+4
+6、集合set：集合是不重复元素的无序组合、用set可以创建空集也可用set从其他序列转换生成集合 如下图
+
+#set集合
+#不重复元素的无序组合
+
+a=[1,2,3,4,3,2,1]
+b=set(a)
+print(a)
+print(b)
+1
+2
+3
+4
+#upper/lower/swapcase修改大小写
+
+print(t.upper())
+print(t.lower())
+print(t.swapcase())
+1
+2
+3
+7、字典dict：是通过key值来索引values元素 如下图
+
+mydict={1:'Mon','linel':3332}
+mydict['Mon']=3
+'linel' in mydict
+mydict.keys()
+mydict.values()
+mydict.items()
+1
+2
+3
+4
+5
+6
+8、运算表达式，函数调用如 import math /n math.sqrt 和赋值 如a=3 是讲3赋值给a这个逻辑
+
+9、if条件语句：包含elif或多条elif语句和一条else语句组成 while语句是条件循环语句 其中break语句是直接跳出循环 如下图
+
+#条件if
+#elif<逻辑条件>:可以多个elif
+
+a=12
+if a>10:
+print("Great!")
+elif a>6:
+print("Middle!")
+else:
+print("Low!")
+1
+2
+3
+4
+5
+6
+7
+#while循环
+
+numbers=[12,37,5,42,8,3]
+even = []
+odd = []
+while len(numbers) > 0:
+number = numbers.pop()
+if(number % 2 == 0):
+even.append(number)
+else:
+odd.append(number)
+print('even:',even)
+print('odd:',odd)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+10、函数function ：定义函数为def语句 调用函数为<函数名>（<参数>） 相关例子如下图：
+
+def sum_list(alist): #定义一个带参数的函数
+
+sum_temp = 0
+for i in alist:
+sum_temp += i
+return sum_temp #函数返回值
+
+print(sum_list) #查看函数对象sum_List
+my_list = [23,45,67,89,100] #调用函数，讲返回值赋值给my_sum
+my_sum = sum_list(my_list)
+print("sum of my List；%d" % (my_sum,))
+
+def func(n):
+total = 1
+for i in range(1, n+1):
+total = total+1
+return total
+
+def sum(n):
+total = 0
+for i in range(1,n + 1):
+total += func(i)
+print(sum)
+sum(3)
+
+def func_test(key1,key2,key3=23):
+print("k1=%s,k2=%s,k3=%s" % (key1,key2,key3))
+
+print("====fun_test")
+func_test('v1','v2')
+func_test('ab','cd',768)
+func_test(key2='kk',key1='k')
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+11、参数 及位置参数
+
+#参数的默认值
+
+def thank_you(name='everyone'):
+print('You are doing good work ,%s!' %name)
+thank_you()
+thank_you('张三')
+1
+2
+3
+4
+#位置参数
+
+def desc_person(first_name,last_name,age):
+print("First name: %s" % first_name.title())
+print("Last name:　%s" % last_name.title())
+print("Age: %d" % age)
+desc_person('brain','kernighan',30)
+desc_person(age=20,first_name='zhang',last_name='hai')
+1
+2
+3
+4
+5
+6
+#混合位置和关键字参数
+
+#接受任意数量的参数
+
+12、.map函数：需要对列表中每个元素做一个相同的处理，得到新列表
+
+#map
+
+def add(a,b):
+return a + b
+1
+2
+#reduce函数对参数进行累积
+
+from functools import reduce
+def myadd(x , y):
+return x + y
+lst = [1,2,3,4,5]
+sum = reduce(myadd,lst)
+print(sum)
+1
+2
+3
+4
+5
+6
+13、 匿名函数lambda：可以返回一个匿名函数 表达式为：lambda<参数表>：<表达式>
+
+14、面向对象
+
+#类定义中的特殊方法
+
+def __str__(self):
+return 'Force<%r, %r>' % (self.x, self.y)
+
+def __mul__(sel,n):
+x, y = self.x * n, self.y *n
+return Force(x,y)
+
+def __add__(self, other):
+x ,y = self.x + other.x, self.y + other.y
+return Force(x, y)
+
+def __eq__(self, other):
+return(self.x == other.x) and (self.y == other.y)
+
+def __repr__(self):
+return 'Force({0.x!r},{0.y!r})'.format(self)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+class Student:
+def __init__(self, name, grade):
+self.name, self.grade = name, grade
+#内置sort函数只引用<比较符来判断前后
+def __lt__(self, other):
+#成绩比other高的，排在他前面
+return self.grade > other.grade
+#Student的易读字符串表示
+def __str__(self):
+return "(%s,%d)" % (self.name, self.grade)
+#Student的正式字符串表示，我们让它跟易读表示相同
+__repr__=__str__
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+#构造一个Python list对象
+
+s = list()
+1
+#添加到student对象到list中
+
+s.append(Student("Jack",80))
+s.append(Student("Cook",90))
+s.append(Student("Tom",70))
+print("Original:", s)
+1
+2
+3
+4
+以上就是这段时间我对Python这门课知识点的总结和理解，以后也会学习更多这方面的知识来丰富自己，为以后的学习筑牢基础。
+最后，课程链接在这里方便大家日后学习：https://aistudio.baidu.com/aistudio/course/introduce/7073
